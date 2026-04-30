@@ -1,1 +1,1 @@
-export { RiskAssessment as default } from './sections/RiskAssessment';
+export { RiskAssessment as default } from '../sections/RiskAssessment';

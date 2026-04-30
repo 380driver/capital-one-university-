@@ -1,1 +1,1 @@
-export { StockChart as default } from './sections/StockChart';
+export { StockChart as default } from '../sections/StockChart';

@@ -1,1 +1,1 @@
-export { PolicySimulator as default } from './sections/PolicySimulator';
+export { PolicySimulator as default } from '../sections/PolicySimulator';

@@ -1,1 +1,1 @@
-export { CreditScoreSimulator as default } from './sections/CreditScoreSimulator';
+export { CreditScoreSimulator as default } from '../sections/CreditScoreSimulator';

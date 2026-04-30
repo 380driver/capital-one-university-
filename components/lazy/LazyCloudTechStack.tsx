@@ -1,1 +1,1 @@
-export { CloudTechStack as default } from './sections/CloudTechStack';
+export { CloudTechStack as default } from '../sections/CloudTechStack';

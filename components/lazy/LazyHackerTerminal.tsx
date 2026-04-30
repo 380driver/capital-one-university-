@@ -1,1 +1,1 @@
-export { HackerTerminal as default } from './sections/HackerTerminal';
+export { HackerTerminal as default } from '../sections/HackerTerminal';

@@ -1,1 +1,1 @@
-export { EnoAssistant as default } from './ui/EnoAssistant';
+export { EnoAssistant as default } from '../ui/EnoAssistant';
