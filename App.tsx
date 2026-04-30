@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { BackgroundScene } from './components/BackgroundScene';
 import { Logo } from './components/ui/Logo';
 import { Hero } from './components/sections/Hero';
 import { ContentDisplay } from './components/sections/ContentDisplay';
-import { RiskAssessment } from './components/sections/RiskAssessment';
 import { Timeline } from './components/sections/Timeline';
-import { EnoAssistant } from './components/ui/EnoAssistant';
-import { QuizSection } from './components/sections/QuizSection';
 import { ComparisonSlider } from './components/ui/ComparisonSlider';
-import { PolicySimulator } from './components/sections/PolicySimulator';
-import { TransformationSection } from './components/sections/TransformationSection';
-import { HackerTerminal } from './components/sections/HackerTerminal';
-import { StockChart } from './components/sections/StockChart';
-import { CreditScoreSimulator } from './components/sections/CreditScoreSimulator';
-import { CloudTechStack } from './components/sections/CloudTechStack';
 import { PerspectiveToggle } from './components/ui/PerspectiveToggle';
 import { PerspectiveProvider } from './context/PerspectiveContext';
 import { CONTENT_SECTIONS, NAV_ITEMS } from './constants';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import { Navbar } from './components/ui/Navbar';
 import { motion, AnimatePresence } from 'framer-motion';
-
 import { ThemeProvider } from './context/ThemeContext';
 import { ThemeToggle } from './components/ui/ThemeToggle';
+import { LoadingFallback } from './components/ui/LoadingFallback';
+
+// Lazy load heavy/below-fold components
+const EnoAssistant = React.lazy(() => import('./components/ui/EnoAssistant'));
+const RiskAssessment = React.lazy(() => import('./components/sections/RiskAssessment'));
+const QuizSection = React.lazy(() => import('./components/sections/QuizSection'));
+const PolicySimulator = React.lazy(() => import('./components/sections/PolicySimulator'));
+const TransformationSection = React.lazy(() => import('./components/sections/TransformationSection'));
+const HackerTerminal = React.lazy(() => import('./components/sections/HackerTerminal'));
+const StockChart = React.lazy(() => import('./components/sections/StockChart'));
+const CreditScoreSimulator = React.lazy(() => import('./components/sections/CreditScoreSimulator'));
+const CloudTechStack = React.lazy(() => import('./components/sections/CloudTechStack'));
 
 const App = () => {
   return (
@@ -67,29 +69,45 @@ const App = () => {
               ))}
 
               {/* Policy Simulator */}
-              <PolicySimulator />
+              <Suspense fallback={<LoadingFallback />}>
+                <PolicySimulator />
+              </Suspense>
 
               {/* Digital Transformation 3D Section */}
-              <TransformationSection />
+              <Suspense fallback={<LoadingFallback />}>
+                <TransformationSection />
+              </Suspense>
 
               {/* Hacker Terminal */}
-              <HackerTerminal />
+              <Suspense fallback={<LoadingFallback />}>
+                <HackerTerminal />
+              </Suspense>
 
               {/* Stock Chart */}
-              <StockChart />
+              <Suspense fallback={<LoadingFallback />}>
+                <StockChart />
+              </Suspense>
 
               {/* Cloud Tech Stack */}
-              <CloudTechStack />
+              <Suspense fallback={<LoadingFallback />}>
+                <CloudTechStack />
+              </Suspense>
 
               {/* Risk Assessment Section */}
-              <RiskAssessment />
+              <Suspense fallback={<LoadingFallback />}>
+                <RiskAssessment />
+              </Suspense>
 
               {/* Credit Score Simulator */}
-              <CreditScoreSimulator />
+              <Suspense fallback={<LoadingFallback />}>
+                <CreditScoreSimulator />
+              </Suspense>
             </div>
 
             {/* Quiz Section */}
-            <QuizSection />
+            <Suspense fallback={<LoadingFallback />}>
+              <QuizSection />
+            </Suspense>
           </main>
 
           {/* Footer */}
@@ -105,7 +123,9 @@ const App = () => {
           </footer>
 
           {/* Eno AI Assistant */}
-          <EnoAssistant />
+          <Suspense fallback={null}>
+            <EnoAssistant />
+          </Suspense>
 
           {/* Perspective Toggle */}
           <PerspectiveToggle />
