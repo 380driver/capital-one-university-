@@ -16,15 +16,15 @@ import { ThemeToggle } from './components/ui/ThemeToggle';
 import { LoadingFallback } from './components/ui/LoadingFallback';
 
 // Lazy load heavy/below-fold components
-const EnoAssistant = React.lazy(() => import('./components/ui/EnoAssistant'));
-const RiskAssessment = React.lazy(() => import('./components/sections/RiskAssessment'));
-const QuizSection = React.lazy(() => import('./components/sections/QuizSection'));
-const PolicySimulator = React.lazy(() => import('./components/sections/PolicySimulator'));
-const TransformationSection = React.lazy(() => import('./components/sections/TransformationSection'));
-const HackerTerminal = React.lazy(() => import('./components/sections/HackerTerminal'));
-const StockChart = React.lazy(() => import('./components/sections/StockChart'));
-const CreditScoreSimulator = React.lazy(() => import('./components/sections/CreditScoreSimulator'));
-const CloudTechStack = React.lazy(() => import('./components/sections/CloudTechStack'));
+const EnoAssistant = React.lazy(() => import('./components/lazy/LazyEnoAssistant'));
+const RiskAssessment = React.lazy(() => import('./components/lazy/LazyRiskAssessment'));
+const QuizSection = React.lazy(() => import('./components/lazy/LazyQuizSection'));
+const PolicySimulator = React.lazy(() => import('./components/lazy/LazyPolicySimulator'));
+const TransformationSection = React.lazy(() => import('./components/lazy/LazyTransformationSection'));
+const HackerTerminal = React.lazy(() => import('./components/lazy/LazyHackerTerminal'));
+const StockChart = React.lazy(() => import('./components/lazy/LazyStockChart'));
+const CreditScoreSimulator = React.lazy(() => import('./components/lazy/LazyCreditScoreSimulator'));
+const CloudTechStack = React.lazy(() => import('./components/lazy/LazyCloudTechStack'));
 
 const App = () => {
   return (
