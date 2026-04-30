@@ -22,16 +22,7 @@ export default defineConfig(({ mode }) => {
       build: {
         // Output optimization
         outDir: 'dist',
-        minify: 'terser',
-        terserOptions: {
-          compress: {
-            drop_console: true,
-            drop_debugger: true
-          },
-          format: {
-            comments: false
-          }
-        },
+        minify: 'esbuild',
         // Chunk splitting strategy
         rollupOptions: {
           output: {
