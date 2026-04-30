@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Logo } from './Logo';
+import { SearchBar } from './SearchBar';
+import { ShareButton } from './ShareButton';
 import { NAV_ITEMS } from '../../constants';
 
 export const Navbar = () => {
@@ -50,19 +52,30 @@ export const Navbar = () => {
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
                   className="relative group px-2 py-1 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-white transition-colors uppercase tracking-widest"
+                  aria-label={`Navigate to ${item.label}`}
                 >
                   {item.label}
                   <span className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-[#004879] to-[#D03027] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
                 </button>
               ))}
             </div>
+
+            {/* Desktop Action Buttons */}
+            <div className="flex items-center gap-2 ml-6 pl-6 border-l border-slate-200 dark:border-slate-700">
+              <SearchBar />
+              <ShareButton />
+            </div>
           </div>
 
           {/* Mobile Toggle */}
           <div className="flex items-center gap-4 md:hidden">
+            <SearchBar />
+            <ShareButton />
             <button
               className="text-slate-800 dark:text-white p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>

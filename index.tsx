@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { enableSmoothScroll } from './utils/scrollAnimations';
+import { initializePrintStyles } from './utils/export';
+
+// Initialize smooth scrolling and print styles
+enableSmoothScroll();
+initializePrintStyles();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

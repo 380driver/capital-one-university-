@@ -14,6 +14,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import { ThemeToggle } from './components/ui/ThemeToggle';
 import { LoadingFallback } from './components/ui/LoadingFallback';
+import { ScrollToTopButton } from './components/ui/ScrollToTop';
 
 // Lazy load heavy/below-fold components
 const EnoAssistant = React.lazy(() => import('./components/lazy/LazyEnoAssistant'));
@@ -30,20 +31,20 @@ const App = () => {
   return (
     <ThemeProvider>
       <PerspectiveProvider>
-        <div className="relative min-h-screen bg-slate-200 dark:bg-[#020617] text-slate-900 dark:text-slate-200 selection:bg-cyan-500/30 selection:text-cyan-200 transition-colors duration-300">
+        <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:bg-[#020617] text-slate-800 dark:text-slate-200 selection:bg-cyan-500/30 selection:text-cyan-200 transition-colors duration-300">
           {/* 3D Background Layer */}
           <BackgroundScene />
 
           {/* Top Info Bar */}
-          <div className="fixed top-0 left-0 right-0 z-[60] bg-slate-100 dark:bg-[#020617] border-b border-slate-300 dark:border-slate-800 py-2 px-4 md:px-8 flex justify-between items-center text-[10px] md:text-xs font-mono uppercase tracking-widest text-slate-600 dark:text-slate-400 transition-colors duration-300">
+          <div className="fixed top-0 left-0 right-0 z-[60] bg-white/80 dark:bg-[#020617]/95 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 py-2 px-4 md:px-8 flex justify-between items-center text-[10px] md:text-xs font-mono uppercase tracking-widest text-slate-600 dark:text-slate-400 transition-colors duration-300 shadow-sm">
             <div className="flex items-center gap-2">
               <GraduationCap className="w-3 h-3 md:w-4 md:h-4 text-cyan-600 dark:text-cyan-500" />
-              <span className="hidden md:inline">University of Coventry - </span>The Knowledge Hub
+              <span className="hidden md:inline text-slate-700 dark:text-slate-300">University of Coventry - </span>The Knowledge Hub
             </div>
             <div className="flex items-center gap-4">
               <span className="text-cyan-600 dark:text-cyan-400 font-bold">Mohamed Ahmed Farid Moaaz</span>
               <span className="w-[1px] h-3 bg-slate-300 dark:bg-slate-700"></span>
-              <span>Module: <span className="text-[#D03027]">KH5022FIN</span></span>
+              <span className="text-slate-600 dark:text-slate-400">Module: <span className="text-red-600 dark:text-[#D03027]">KH5022FIN</span></span>
             </div>
           </div>
 
@@ -111,12 +112,12 @@ const App = () => {
           </main>
 
           {/* Footer */}
-          <footer className="relative z-10 bg-white dark:bg-[#01040f] border-t border-slate-200 dark:border-slate-800 py-12 mt-20 transition-colors duration-300">
+          <footer className="relative z-10 bg-slate-50 dark:bg-[#01040f] border-t border-slate-200/50 dark:border-slate-800 py-12 mt-20 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-8 text-center">
-              <p className="text-slate-500 mb-4 uppercase tracking-widest font-bold text-xs">
+              <p className="text-slate-600 dark:text-slate-500 mb-4 uppercase tracking-widest font-bold text-xs">
                 Digital Transformation Case Study
               </p>
-              <p className="text-slate-600 text-sm">
+              <p className="text-slate-600 dark:text-slate-400 text-sm">
                 &copy; 2025 Mohamed Ahmed Farid Moaaz. All Rights Reserved.
               </p>
             </div>
@@ -132,6 +133,9 @@ const App = () => {
 
           {/* Theme Toggle */}
           <ThemeToggle />
+
+          {/* Scroll to Top Button */}
+          <ScrollToTopButton />
         </div>
       </PerspectiveProvider>
     </ThemeProvider>
