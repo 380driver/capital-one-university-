@@ -13,7 +13,7 @@ export const PerspectiveToggle = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={togglePerspective}
-            className={`fixed bottom-8 right-8 z-50 flex items-center gap-3 px-6 py-3 rounded-full shadow-2xl backdrop-blur-md border transition-all duration-300 ${perspective === 'banker'
+            className={`fixed bottom-4 left-4 md:bottom-8 md:left-8 z-50 flex items-center gap-3 px-5 md:px-6 py-3 rounded-full shadow-2xl backdrop-blur-md border transition-all duration-300 ${perspective === 'banker'
                     ? 'bg-slate-900/90 border-cyan-500/50 text-cyan-400 shadow-cyan-900/20'
                     : 'bg-rose-950/90 border-rose-500/50 text-rose-400 shadow-rose-900/20'
                 }`}
