@@ -66,7 +66,7 @@ const ExpoProblemHero = () => {
     return () => cancelAnimationFrame(frameId);
   }, []);
 
-  const qrTarget = encodeURIComponent('https://github.com/380driver/capital-one-university-');
+  const qrTarget = encodeURIComponent('https://school-projecct.vercel.app/');
   const qrSource = `https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=${qrTarget}`;
 
   return (
