@@ -13,7 +13,7 @@ export const ShareButton = () => {
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-        aria-label="Share this page"
+        aria-label="My Pages"
         title="Share"
       >
         <Share2 className="w-5 h-5 text-slate-600 dark:text-slate-400" />
@@ -28,7 +28,7 @@ export const ShareButton = () => {
             className="absolute right-0 top-full mt-2 w-56 bg-white dark:bg-slate-900 rounded-lg shadow-xl border border-slate-200 dark:border-slate-800 z-50 p-4"
           >
             <div className="space-y-3">
-              <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">Share this page</div>
+              <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">My Pages</div>
 
               <motion.a
                 whileHover={{ scale: 1.02 }}
