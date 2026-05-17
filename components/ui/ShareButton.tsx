@@ -6,10 +6,6 @@ export const ShareButton = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const linkedInProfileUrl = 'https://www.linkedin.com/in/mohamed-moaaz-b95493389/';
 
-  const handleShare = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <div className="relative">
       <motion.button
@@ -34,16 +30,19 @@ export const ShareButton = () => {
             <div className="space-y-3">
               <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3">Share this page</div>
 
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => handleShare(linkedInProfileUrl)}
+                href={linkedInProfileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
                 className="w-full py-2 px-3 rounded-lg font-semibold text-sm transition-colors bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white"
                 aria-label="Open LinkedIn profile"
                 title="Open LinkedIn profile"
               >
                 LinkedIn
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}
