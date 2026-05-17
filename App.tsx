@@ -5,7 +5,6 @@ import { Hero } from './components/sections/Hero';
 import { ContentDisplay } from './components/sections/ContentDisplay';
 import { Timeline } from './components/sections/Timeline';
 import { ComparisonSlider } from './components/ui/ComparisonSlider';
-import { PerspectiveToggle } from './components/ui/PerspectiveToggle';
 import { PerspectiveProvider } from './context/PerspectiveContext';
 import { CONTENT_SECTIONS, NAV_ITEMS } from './constants';
 import { GraduationCap } from 'lucide-react';
@@ -243,9 +242,6 @@ const App = () => {
           <Suspense fallback={null}>
             <EnoAssistant />
           </Suspense>
-
-          {/* Perspective Toggle */}
-          <PerspectiveToggle />
 
           {/* Theme Toggle */}
           <ThemeToggle />
